@@ -1,0 +1,9 @@
+C:\Users\gabriel.bernardone\Desktop\ConsoleApplication1\ConsoleApplication1\bin\Release\ConsoleApplication1.exe.config
+C:\Users\gabriel.bernardone\Desktop\ConsoleApplication1\ConsoleApplication1\bin\Release\phantomjs-license.txt
+C:\Users\gabriel.bernardone\Desktop\ConsoleApplication1\ConsoleApplication1\bin\Release\phantomjs.exe
+C:\Users\gabriel.bernardone\Desktop\ConsoleApplication1\ConsoleApplication1\bin\Release\ConsoleApplication1.exe
+C:\Users\gabriel.bernardone\Desktop\ConsoleApplication1\ConsoleApplication1\bin\Release\ConsoleApplication1.pdb
+C:\Users\gabriel.bernardone\Desktop\ConsoleApplication1\ConsoleApplication1\bin\Release\WebDriver.dll
+C:\Users\gabriel.bernardone\Desktop\ConsoleApplication1\ConsoleApplication1\bin\Release\WebDriver.xml
+C:\Users\gabriel.bernardone\Desktop\ConsoleApplication1\ConsoleApplication1\obj\Release\ConsoleApplication1.exe
+C:\Users\gabriel.bernardone\Desktop\ConsoleApplication1\ConsoleApplication1\obj\Release\ConsoleApplication1.pdb
