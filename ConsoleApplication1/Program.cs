@@ -10,6 +10,7 @@ using System.Net;
 using OpenQA.Selenium.PhantomJS;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace InstackupPhontomJS
 {
@@ -30,6 +31,10 @@ namespace InstackupPhontomJS
             string numberfollowers = string.Empty;
             string name = string.Empty;
             string description = string.Empty;
+
+            ProcessStartInfo process = new ProcessStartInfo("CMD.exe");
+
+            process.StandardOutputEncoding = Encoding.GetEncoding(860);
 
             using (var driverPhantom = new PhantomJSDriver())
             {
@@ -119,6 +124,7 @@ namespace InstackupPhontomJS
 
                 Console.WriteLine("\n");
                 centerText("\n----------------- Reunindo URL -----------------");
+                Console.WriteLine("\n");
                 //var photo = driverPhantom.FindElementByXPath("//*[@id='react-root']/section/main/article/div/div[1]/div[1]/a[1]/div/div[1]/img").GetAttribute("src").Split('?').First();
 
                 IList<string> Link = new List<string>();
