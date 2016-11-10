@@ -52,7 +52,6 @@ namespace InstackupPhontomJS
                 Thread.Sleep(1000);
                 Console.WriteLine("\n");
 
-
                 centerText("----------------- Capturando informações----------------- \n");
                 //*[@id="react-root"]/section/main/article/header/div[2]/ul/li[2]
 
