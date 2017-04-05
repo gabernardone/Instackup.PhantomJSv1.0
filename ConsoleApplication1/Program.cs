@@ -11,6 +11,7 @@ using OpenQA.Selenium.PhantomJS;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using OpenQA.Selenium.Remote;
 
 namespace InstackupPhontomJS
 {
@@ -36,9 +37,16 @@ namespace InstackupPhontomJS
 
             process.StandardOutputEncoding = Encoding.GetEncoding(860);
 
-            using (var driverPhantom = new PhantomJSDriver())
+            PhantomJSDriverService service = PhantomJSDriverService.CreateDefaultService();
+            service.IgnoreSslErrors = true;
+            service.LoadImages = false;
+            service.ProxyType = "none";
+            
+
+            using (var driverPhantom = new PhantomJSDriver(service))
             {
                 driverPhantom.Manage().Window.Maximize();
+
 
                 Console.OutputEncoding = Encoding.Unicode;
                 Console.Clear();
@@ -48,7 +56,7 @@ namespace InstackupPhontomJS
                 string insta = Console.ReadLine();
 
                 driverPhantom.Navigate().GoToUrl("https://www.instagram.com/" + insta);
-
+                
                 Thread.Sleep(1000);
                 Console.WriteLine("\n");
 
@@ -57,10 +65,10 @@ namespace InstackupPhontomJS
 
                 try
                 {
-                    driverPhantom.FindElementByXPath("//*[@id='react-root']/section/main/article/div/div[3]/a").Click();
+                    driverPhantom.FindElementByXPath("//*[@id='react-root']/section/main/article/div/a").Click();
 
                     numberPhotos = int.Parse(driverPhantom.FindElementByXPath("//*[@id='react-root']/section/main/article/header/div[2]/ul/li[1]/span/span").Text);
-
+                    
                     numberPhotosInPage = driverPhantom.FindElements(By.XPath("//*[@id='react-root']/section/main/article/div/div[1]/div//a")).Count;
 
                     numberfollowers = driverPhantom.FindElement(By.XPath("//*[@id='react-root']/section/main/article/header/div[2]/ul/li[2]")).Text;
@@ -133,23 +141,25 @@ namespace InstackupPhontomJS
                     TimeSpan time = TimeSpan.FromSeconds(10);
 
                     IList<IWebElement> Photos = driverPhantom.FindElements(By.XPath("//*[@id='react-root']/section/main/article/div/div[1]//div/a//img"));
-
                     int urlCount = 0;
-                    foreach (var item in Photos)
-                    {
-                        try
+                   
+                        foreach (var item in Photos.Distinct())
                         {
-                            Console.Write("\r Preparando imagens...{0} de {1}  ", urlCount, numberPhotos);
-                            driverPhantom.Manage().Timeouts().ImplicitlyWait(time);
-                            Link.Add(item.GetAttribute("src").Split('?')[0]);
-                            urlCount++;
-                        }
-                        catch (StaleElementReferenceException e)
-                        {
-                            Console.WriteLine("Recuperando URL");
-                        }
+                            try
+                            {
+                                Console.Write("\r Preparando imagens... {0} de {1}  ", urlCount, numberPhotos);
+                                driverPhantom.Manage().Timeouts().ImplicitlyWait(time);
+                                Link.Add(item.GetAttribute("src").Split('?')[0]);                                
+                                urlCount++;
+                            }
+                            catch (StaleElementReferenceException e)
+                            {
+                                Console.WriteLine("Recuperando URL");
+                            }
 
-                    }
+                        }
+                    
+                    
 
                 }
                 catch (WebDriverException)
@@ -167,10 +177,11 @@ namespace InstackupPhontomJS
                     centerText("----------------- Salvando Fotos -----------------");
                     Console.WriteLine("\n");
                     string diretorio = fbd.SelectedPath;
+
                     int total = 0;
 
 
-                        foreach (var item in Link)
+                    foreach (var item in Link.Distinct())
                         {
                             using (WebClient webClient = new WebClient())
                             {

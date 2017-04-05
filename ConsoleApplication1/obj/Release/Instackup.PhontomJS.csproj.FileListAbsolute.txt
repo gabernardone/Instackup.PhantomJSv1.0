@@ -1,0 +1,10 @@
+C:\Users\gabriel.d.bernardone\Desktop\Instackup.PhantomJSv1.0\ConsoleApplication1\bin\Release\phantomjs-license.txt
+C:\Users\gabriel.d.bernardone\Desktop\Instackup.PhantomJSv1.0\ConsoleApplication1\bin\Release\phantomjs.exe
+C:\Users\gabriel.d.bernardone\Desktop\Instackup.PhantomJSv1.0\ConsoleApplication1\bin\Release\ConsoleApplication1.exe.config
+C:\Users\gabriel.d.bernardone\Desktop\Instackup.PhantomJSv1.0\ConsoleApplication1\bin\Release\ConsoleApplication1.exe
+C:\Users\gabriel.d.bernardone\Desktop\Instackup.PhantomJSv1.0\ConsoleApplication1\bin\Release\ConsoleApplication1.pdb
+C:\Users\gabriel.d.bernardone\Desktop\Instackup.PhantomJSv1.0\ConsoleApplication1\bin\Release\WebDriver.dll
+C:\Users\gabriel.d.bernardone\Desktop\Instackup.PhantomJSv1.0\ConsoleApplication1\bin\Release\WebDriver.xml
+C:\Users\gabriel.d.bernardone\Desktop\Instackup.PhantomJSv1.0\ConsoleApplication1\obj\Release\Instackup.PhontomJS.csprojResolveAssemblyReference.cache
+C:\Users\gabriel.d.bernardone\Desktop\Instackup.PhantomJSv1.0\ConsoleApplication1\obj\Release\ConsoleApplication1.exe
+C:\Users\gabriel.d.bernardone\Desktop\Instackup.PhantomJSv1.0\ConsoleApplication1\obj\Release\ConsoleApplication1.pdb
